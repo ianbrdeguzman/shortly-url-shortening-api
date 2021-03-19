@@ -1,0 +1,440 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #35323e;
+  text-align: center;
+  line-height: 1.5;
+}
+
+header {
+  width: 100%;
+  padding: 2rem 2rem 0 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+header button {
+  cursor: pointer;
+  font-size: 1.8rem;
+  color: #bfbfbf;
+  background: transparent;
+  border: none;
+}
+
+header nav {
+  width: 85vw;
+  padding: 1rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  background-color: #3b3054;
+  position: absolute;
+  top: 130%;
+  right: -100%;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+header nav ul {
+  list-style: none;
+}
+
+header nav ul li a {
+  display: block;
+  color: white;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+header nav ul li a:hover {
+  color: #2acfcf;
+}
+
+header nav ul li:nth-child(3) {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eff0f5;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+header nav ul li:nth-child(4) {
+  padding-top: 1rem;
+}
+
+header nav ul li:nth-child(5) {
+  margin: 0.5rem 1rem 1rem 1rem;
+  border-radius: 3rem;
+  background-color: #2acfcf;
+}
+
+header nav ul li:nth-child(5) a {
+  padding: 0.5rem;
+}
+
+header nav ul li:nth-child(5):hover {
+  background-color: #9ce3e2;
+}
+
+header nav ul li:nth-child(5):hover a {
+  color: white;
+}
+
+header nav.active {
+  right: 50%;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+}
+
+.hero-container {
+  padding: 0 1.5rem;
+  margin: 1rem 0 0 0;
+  overflow: hidden;
+}
+
+.hero-container div:first-child {
+  width: 100vw;
+}
+
+.hero-container div:first-child img {
+  width: 135%;
+}
+
+.hero-container div:last-child {
+  margin: 2.5rem 0 10rem 0;
+}
+
+.hero-container div:last-child h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero-container div:last-child p {
+  margin: 1rem 0;
+  color: #9e9aa7;
+}
+
+.hero-container div:last-child button {
+  margin-top: 1rem;
+}
+
+.shorten-container {
+  width: 85vw;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background-color: #3b3054;
+  background-image: url(../images/bg-shorten-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 4rem -3rem;
+  position: absolute;
+  top: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.shorten-container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.shorten-container form input {
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  border: 3px solid white;
+}
+
+.shorten-container form input::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+.shorten-container form input:-ms-input-placeholder {
+  color: #bfbfbf;
+}
+
+.shorten-container form input::-ms-input-placeholder {
+  color: #bfbfbf;
+}
+
+.shorten-container form input::placeholder {
+  color: #bfbfbf;
+}
+
+.shorten-container form p {
+  display: none;
+}
+
+.shorten-container form.error input {
+  border: 3px solid #f46262;
+  border-radius: 5px;
+}
+
+.shorten-container form.error input::-webkit-input-placeholder {
+  color: #fbc1c1;
+}
+
+.shorten-container form.error input:-ms-input-placeholder {
+  color: #fbc1c1;
+}
+
+.shorten-container form.error input::-ms-input-placeholder {
+  color: #fbc1c1;
+}
+
+.shorten-container form.error input::placeholder {
+  color: #fbc1c1;
+}
+
+.shorten-container form.error p {
+  display: block;
+  width: 100%;
+  color: #f46262;
+  text-align: left;
+  font-style: italic;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 5px 0;
+}
+
+.links-container {
+  margin: 7rem 0 0 0;
+}
+
+.links-container .link-content {
+  width: 85vw;
+  font-size: 1rem;
+  text-align: left;
+  background-color: white;
+  border-radius: 0.3rem;
+  display: none;
+}
+
+.links-container .link-content p {
+  padding: 1rem;
+  border-bottom: 1px solid #bfbfbf;
+}
+
+.links-container .link-content p a {
+  color: #35323e;
+  text-decoration: none;
+}
+
+.links-container .link-content div {
+  padding: 1rem;
+}
+
+.links-container .link-content div p {
+  padding: unset;
+  border-bottom: none;
+}
+
+.links-container .link-content div p a {
+  color: #2acfcf;
+}
+
+.links-container .link-content.active {
+  display: block;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #eff0f5;
+  position: relative;
+}
+
+main .stats-container {
+  width: 85vw;
+  margin: 5rem 0;
+}
+
+main .stats-container p {
+  color: #9e9aa7;
+  margin: 1rem 0 0 0;
+  font-size: 1rem;
+}
+
+main .stats-container article {
+  margin-top: 6rem;
+  padding: 5rem 2rem 2rem 2rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  position: relative;
+}
+
+main .stats-container article::before {
+  content: '';
+  display: block;
+  width: 90px;
+  height: 90px;
+  background-color: #3b3054;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+main .stats-container .article-1::before {
+  background-image: url(../images/icon-brand-recognition.svg);
+}
+
+main .stats-container .article-2::before {
+  background-image: url(../images/icon-detailed-records.svg);
+}
+
+main .stats-container .article-3::before {
+  background-image: url(../images/icon-fully-customizable.svg);
+}
+
+.boost-container {
+  height: 300px;
+  color: white;
+  background-color: #3b3054;
+  background-image: url(../images/bg-boost-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.boost-container button {
+  margin-top: 1rem;
+}
+
+footer {
+  color: white;
+  background-color: #232127;
+}
+
+footer img {
+  margin: 3rem 0;
+}
+
+footer ul {
+  list-style: none;
+  margin: 1rem 0 3rem 0;
+}
+
+footer ul li a {
+  display: block;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #bfbfbf;
+  text-decoration: none;
+}
+
+footer ul li a:hover {
+  color: #2acfcf;
+}
+
+footer .social-container {
+  padding: 0 0 3rem 0;
+  font-size: 1.7rem;
+}
+
+footer .social-container a {
+  padding: 0 0.5rem;
+  color: white;
+}
+
+footer .social-container a:hover {
+  color: #2acfcf;
+}
+
+.get-started {
+  cursor: pointer;
+  color: white;
+  background-color: #2acfcf;
+  border: none;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 0.9rem 2.5rem;
+  border-radius: 3rem;
+}
+
+.get-started:hover {
+  background-color: #9ce3e2;
+}
+
+.btn {
+  width: 100%;
+  margin-top: 1rem;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 600;
+  color: white;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: #2acfcf;
+}
+
+.btn:hover {
+  background-color: #9ce3e2;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+/*# sourceMappingURL=style.css.map */
