@@ -205,6 +205,9 @@ header {
                     display: none;
                 }
             }
+            button.active {
+                background-color: $primary-dark-violet;
+            }
         }
         &.active {
             display: block;

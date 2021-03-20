@@ -6,7 +6,7 @@ class UI {
             form.classList.remove('error');
         }, 5000);
     }
-    toggleloading() {
+    toggleLoading() {
         const loading = document.querySelector('.loading-container');
         loading.classList.toggle('active');
     }
@@ -14,7 +14,7 @@ class UI {
         document.querySelector('form').reset();
     }
     showCopied(button) {
-        button.style.backgroundColor = 'hsl(257, 27%, 26%)';
+        button.classList.add('active');
         button.textContent = 'Copied!';
     }
     createLink(originalLink, shortLink) {

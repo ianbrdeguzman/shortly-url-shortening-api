@@ -267,6 +267,10 @@ header nav ul.active {
   display: none;
 }
 
+.links-container .link-content div:last-child button.active {
+  background-color: #3b3054;
+}
+
 .links-container .link-content.active {
   display: block;
 }

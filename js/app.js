@@ -1,10 +1,13 @@
 import API from './API.js';
 import UI from './UI.js';
+import Storage from './Storage.js';
 
 class App {
     update() {
-        this.submitForm();
         this.toggleMenu();
+        this.submitForm();
+        Storage.load();
+        this.copyLink();
     }
     submitForm() {
         const form = document.querySelector('form');
@@ -12,13 +15,14 @@ class App {
             const input = document.querySelector('#url').value;
             e.preventDefault();
             if (input) {
-                ui.toggleloading();
+                ui.toggleLoading();
                 const data = await api.getLink(input);
                 const { original_link, short_link } = data.result;
                 ui.createLink(original_link, short_link);
-                ui.toggleloading();
+                ui.toggleLoading();
                 ui.resetForm();
                 this.copyLink();
+                this.storeLinks();
             } else {
                 ui.showError();
             }
@@ -41,7 +45,16 @@ class App {
                 document.execCommand('copy');
                 textarea.remove();
                 ui.showCopied(e.target);
+                this.storeLinks();
             });
+        });
+    }
+    storeLinks() {
+        Storage.clear();
+        const links = document.querySelectorAll('.link-content');
+        console.log(links[0].outerHTML);
+        links.forEach((link, index) => {
+            Storage.save(link.outerHTML, index);
         });
     }
 }
