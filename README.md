@@ -1,6 +1,6 @@
 # Frontend Mentor - Shortly URL shortening API Challenge
 
-Check it out [here!]()
+Check it out [here!](https://ianbrdeguzman.github.io/shortly-url-shortening-api/)
 
 ## Created using:
 
