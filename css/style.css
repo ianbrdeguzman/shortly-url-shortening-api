@@ -429,6 +429,7 @@ footer .social-container a:hover {
 }
 
 .btn {
+  cursor: pointer;
   width: 100%;
   margin-top: 1rem;
   font-family: inherit;
@@ -652,6 +653,7 @@ footer .social-container a:hover {
   }
   main .stats-container div {
     width: 100%;
+    text-align: left;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -733,8 +735,11 @@ footer .social-container a:hover {
     padding-bottom: 0;
     margin-right: 28rem;
   }
+  .hero-container {
+    width: 70vw;
+  }
   .hero-container div:first-child {
-    right: -15%;
+    right: -20%;
   }
   .hero-container div:first-child img {
     width: 100%;
@@ -749,6 +754,9 @@ footer .social-container a:hover {
     font-size: 1.5rem;
     padding-right: 10rem;
   }
+  main .links-container {
+    width: 80vw;
+  }
   main .stats-container {
     width: 80vw;
   }
@@ -756,43 +764,69 @@ footer .social-container a:hover {
     width: 500px;
     margin: 1rem auto 0 auto;
   }
-  main .stats-container div {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
   main .stats-container div article {
-    width: 250px;
-    height: 300px;
-    margin: 5rem 0 0 0;
-    padding: 5rem 1rem 2rem 1rem;
-  }
-  main .stats-container div article p {
-    width: 100%;
+    width: 350px;
+    height: 260px;
+    padding: 5rem 2rem 2rem 2rem;
   }
   main .stats-container div article::before {
-    left: 30%;
+    left: 20%;
+  }
+  footer div img {
+    margin: 0 20rem 0 0;
+  }
+}
+
+@media (min-width: 1920px) {
+  header {
+    width: 70vw;
+  }
+  header nav ul li:nth-child(3) {
+    padding-bottom: 0;
+    margin-right: 41rem;
+  }
+  .hero-container div:first-child {
+    right: -20%;
+  }
+  .hero-container div:first-child img {
+    width: 80%;
+  }
+  .hero-container div:last-child {
+    width: 50%;
+  }
+  .hero-container div:last-child h2 {
+    font-size: 5rem;
+  }
+  .hero-container div:last-child p {
+    font-size: 1.5rem;
+    padding-right: 10rem;
+  }
+  main .links-container {
+    width: 70vw;
+  }
+  main .shorten-container {
+    width: 70vw;
+  }
+  main .stats-container {
+    width: 70vw;
+  }
+  main .stats-container p {
+    width: 500px;
+    margin: 1rem auto 0 auto;
+  }
+  main .stats-container div article {
+    width: 350px;
+    height: 260px;
+    padding: 5rem 2rem 2rem 2rem;
+  }
+  main .stats-container div article::before {
+    left: 20%;
   }
   main .stats-container div article::after {
-    width: 50px;
-    height: 8px;
-    top: 50%;
-    left: 100%;
-    -webkit-transform: translate(0%, 100%);
-            transform: translate(0%, 100%);
+    width: 150px;
   }
-  main .stats-container div .article-2 {
-    margin: 8rem 0 0 0;
-  }
-  main .stats-container div .article-2::after {
-    top: 35%;
-  }
-  main .stats-container div .article-3 {
-    margin: 11rem 0 0 0;
+  footer div {
+    width: 70vw;
   }
   footer div img {
     margin: 0 20rem 0 0;

@@ -328,6 +328,7 @@ footer {
     }
 }
 .btn {
+    cursor: pointer;
     width: 100%;
     margin-top: 1rem;
     font-family: inherit;
@@ -519,6 +520,7 @@ footer {
             }
             div {
                 width: 100%;
+                text-align: left;
                 display: flex;
                 justify-content: space-between;
                 article {
@@ -589,8 +591,9 @@ footer {
         }
     }
     .hero-container {
+        width: 70vw;
         div:first-child {
-            right: -15%;
+            right: -20%;
             img {
                 width: 100%;
             }
@@ -607,6 +610,9 @@ footer {
         }
     }
     main {
+        .links-container {
+            width: 80vw;
+        }
         .stats-container {
             width: 80vw;
             p {
@@ -614,42 +620,86 @@ footer {
                 margin: 1rem auto 0 auto;
             }
             div {
-                width: 100%;
-                display: flex;
-                justify-content: space-between;
                 article {
-                    width: 250px;
-                    height: 300px;
-                    margin: 5rem 0 0 0;
-                    padding: 5rem 1rem 2rem 1rem;
-                    p {
-                        width: 100%;
-                    }
+                    width: 350px;
+                    height: 260px;
+                    padding: 5rem 2rem 2rem 2rem;
                     &::before {
-                        left: 30%;
+                        left: 20%;
                     }
-                    &::after {
-                        width: 50px;
-                        height: 8px;
-                        top: 50%;
-                        left: 100%;
-                        transform: translate(0%, 100%);
-                    }
-                }
-                .article-2 {
-                    margin: 8rem 0 0 0;
-                    &::after {
-                        top: 35%;
-                    }
-                }
-                .article-3 {
-                    margin: 11rem 0 0 0;
                 }
             }
         }
     }
     footer {
         div {
+            img {
+                margin: 0 20rem 0 0;
+            }
+        }
+    }
+}
+@media (min-width: 1920px) {
+    header {
+        width: 70vw;
+        nav {
+            ul {
+                li:nth-child(3) {
+                    padding-bottom: 0;
+                    margin-right: 41rem;
+                }
+            }
+        }
+    }
+    .hero-container {
+        div:first-child {
+            right: -20%;
+            img {
+                width: 80%;
+            }
+        }
+        div:last-child {
+            width: 50%;
+            h2 {
+                font-size: 5rem;
+            }
+            p {
+                font-size: 1.5rem;
+                padding-right: 10rem;
+            }
+        }
+    }
+    main {
+        .links-container {
+            width: 70vw;
+        }
+        .shorten-container {
+            width: 70vw;
+        }
+        .stats-container {
+            width: 70vw;
+            p {
+                width: 500px;
+                margin: 1rem auto 0 auto;
+            }
+            div {
+                article {
+                    width: 350px;
+                    height: 260px;
+                    padding: 5rem 2rem 2rem 2rem;
+                    &::before {
+                        left: 20%;
+                    }
+                    &::after {
+                        width: 150px;
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        div {
+            width: 70vw;
             img {
                 margin: 0 20rem 0 0;
             }
