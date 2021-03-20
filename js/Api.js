@@ -1,27 +1,25 @@
-class Api {
-    shortenLink() {
-        const input = document.querySelector('#url');
+import UI from './UI.js';
 
-        const url = `https://api.shrtco.de/v2/shorten?url=${input.value}`;
-        const form = document.querySelector('form');
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            if (input) {
-                try {
-                    console.log('input is not empty');
-                    const response = await fetch(url);
-                    console.log(response);
-                    const data = await response.json();
-                    console.log(data);
-                } catch (err) {
-                    console.error(err);
-                }
+class API {
+    async getLink(input) {
+        try {
+            const url = `https://api.shrtco.de/v2/shorten?url=${input}`;
+            const response = await fetch(url);
+            const data = await response.json();
+            if (!data.ok) {
+                const error = new Error(data.error);
+                throw error;
             } else {
-                console.log('input is empty');
-                form.classList.add('error');
+                return data;
             }
-        });
+        } catch (err) {
+            alert(err);
+            ui.toggleloading();
+            ui.resetForm();
+        }
     }
 }
 
-export default Api;
+const ui = new UI();
+
+export default API;

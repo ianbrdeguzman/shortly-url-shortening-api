@@ -227,6 +227,7 @@ header nav ul.active {
 
 .links-container .link-content {
   width: 85vw;
+  margin: 0 0 1rem 0;
   font-size: 1rem;
   text-align: left;
   background-color: white;
@@ -234,27 +235,36 @@ header nav ul.active {
   display: none;
 }
 
-.links-container .link-content p {
+.links-container .link-content div:first-child {
   padding: 1rem;
   border-bottom: 1px solid #bfbfbf;
 }
 
-.links-container .link-content p a {
-  color: #35323e;
-  text-decoration: none;
+.links-container .link-content div:first-child p {
+  overflow-x: auto;
+  white-space: nowrap;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-.links-container .link-content div {
+.links-container .link-content div:first-child p::-webkit-scrollbar {
+  display: none;
+}
+
+.links-container .link-content div:last-child {
   padding: 1rem;
 }
 
-.links-container .link-content div p {
-  padding: unset;
-  border-bottom: none;
+.links-container .link-content div:last-child p {
+  color: #2acfcf;
+  overflow-x: auto;
+  white-space: nowrap;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-.links-container .link-content div p a {
-  color: #2acfcf;
+.links-container .link-content div:last-child p::-webkit-scrollbar {
+  display: none;
 }
 
 .links-container .link-content.active {
@@ -446,6 +456,60 @@ footer .social-container a:hover {
   background-color: #9ce3e2;
 }
 
+.loading-container {
+  z-index: 3000;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  border-radius: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.loading-container div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  margin-top: -25px;
+  margin-left: -25px;
+  border-radius: 50%;
+  border: 2px solid white;
+  border-top-color: #232127;
+  -webkit-animation: spinner 0.6s linear infinite;
+          animation: spinner 0.6s linear infinite;
+}
+
+.loading-container.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@-webkit-keyframes spinner {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
@@ -459,8 +523,15 @@ footer .social-container a:hover {
   .hero-container div:first-child img {
     width: 130%;
   }
-  .shorten-container {
+  main .shorten-container {
     background-position: 10rem -14rem;
+  }
+  main .stats-container p {
+    width: 70%;
+    margin: 1rem auto 0 auto;
+  }
+  main .stats-container div p {
+    width: 100%;
   }
 }
 
@@ -500,14 +571,14 @@ footer .social-container a:hover {
   }
   header nav ul li:nth-child(3) {
     padding-bottom: 0;
-    margin-right: 8rem;
+    margin-right: 6rem;
   }
   header nav ul li:nth-child(4) {
     padding: 0;
   }
   header nav ul li:nth-child(5) {
     margin: 0 0 0 1rem;
-    padding: 0.5rem 1rem;
+    padding: 0.3rem 2rem;
   }
   header nav ul li:nth-child(5) a {
     color: white;
@@ -610,34 +681,49 @@ footer .social-container a:hover {
   main .links-container .link-content {
     width: 100%;
     display: none;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
-  main .links-container .link-content p {
-    height: 100%;
-    border: none;
+  main .links-container .link-content div:first-child {
+    width: 520px;
     padding: 1rem;
+    border-bottom: unset;
   }
-  main .links-container .link-content div {
+  main .links-container .link-content div:first-child p {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  main .links-container .link-content div:last-child {
+    width: 300px;
     padding: 1rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
   }
-  main .links-container .link-content div p {
-    padding: unset;
-    border-bottom: none;
+  main .links-container .link-content div:last-child p {
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
   }
-  main .links-container .link-content div button {
-    width: 100px;
-    margin: 0 0 0 2rem;
+  main .links-container .link-content div:last-child p a {
+    color: #2acfcf;
+    text-decoration: none;
+  }
+  main .links-container .link-content div:last-child button {
+    margin: 0 0 0 1rem;
+    width: 150px;
   }
   main .links-container .link-content.active {
     display: -webkit-box;
@@ -674,7 +760,7 @@ footer .social-container a:hover {
     left: 30%;
   }
   main .stats-container div article::after {
-    width: 50px;
+    width: 200px;
     height: 8px;
     top: 50%;
     left: 100%;
@@ -710,7 +796,10 @@ footer .social-container a:hover {
             align-items: flex-start;
   }
   footer div img {
-    margin: 0 5rem 0 0;
+    margin: 0 10rem 0 0;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
   }
   footer div div {
     text-align: left;
@@ -733,10 +822,10 @@ footer .social-container a:hover {
 @media (min-width: 1440px) {
   header nav ul li:nth-child(3) {
     padding-bottom: 0;
-    margin-right: 28rem;
+    margin-right: 27rem;
   }
   .hero-container {
-    width: 70vw;
+    width: 80vw;
   }
   .hero-container div:first-child {
     right: -20%;
@@ -756,6 +845,15 @@ footer .social-container a:hover {
   }
   main .links-container {
     width: 80vw;
+  }
+  main .links-container .link-content {
+    width: 100%;
+  }
+  main .links-container .link-content div:first-child {
+    width: 800px;
+  }
+  main .links-container .link-content div:last-child {
+    width: 350px;
   }
   main .stats-container {
     width: 80vw;
@@ -783,7 +881,10 @@ footer .social-container a:hover {
   }
   header nav ul li:nth-child(3) {
     padding-bottom: 0;
-    margin-right: 41rem;
+    margin-right: 39rem;
+  }
+  .hero-container {
+    width: 70vw;
   }
   .hero-container div:first-child {
     right: -20%;
@@ -804,6 +905,15 @@ footer .social-container a:hover {
   main .links-container {
     width: 70vw;
   }
+  main .links-container .link-content {
+    width: 100%;
+  }
+  main .links-container .link-content div:first-child {
+    width: 900px;
+  }
+  main .links-container .link-content div:last-child {
+    width: 400px;
+  }
   main .shorten-container {
     width: 70vw;
   }
@@ -815,21 +925,15 @@ footer .social-container a:hover {
     margin: 1rem auto 0 auto;
   }
   main .stats-container div article {
-    width: 350px;
-    height: 260px;
-    padding: 5rem 2rem 2rem 2rem;
-  }
-  main .stats-container div article::before {
-    left: 20%;
-  }
-  main .stats-container div article::after {
-    width: 150px;
+    width: 400px;
+    height: 280px;
+    padding: 5rem 3rem 2rem 3rem;
   }
   footer div {
     width: 70vw;
   }
   footer div img {
-    margin: 0 20rem 0 0;
+    margin: 0 30rem 0 0;
   }
 }
 /*# sourceMappingURL=style.css.map */
