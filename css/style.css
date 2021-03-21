@@ -717,9 +717,6 @@ footer .social-container a:hover {
   main .links-container .link-content div:last-child p {
     overflow-x: auto;
     white-space: nowrap;
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
   }
   main .links-container .link-content div:last-child p a {
     color: #2acfcf;
@@ -727,7 +724,7 @@ footer .social-container a:hover {
   }
   main .links-container .link-content div:last-child button {
     margin: 0 0 0 1rem;
-    width: 150px;
+    max-width: 150px;
   }
   main .links-container .link-content.active {
     display: -webkit-box;

@@ -567,7 +567,6 @@ footer {
                     p {
                         overflow-x: auto;
                         white-space: nowrap;
-                        flex-grow: 1;
                         a {
                             color: $primary-cyan;
                             text-decoration: none;
@@ -575,7 +574,7 @@ footer {
                     }
                     button {
                         margin: 0 0 0 1rem;
-                        width: 150px;
+                        max-width: 150px;
                     }
                 }
                 &.active {
